@@ -1,3 +1,12 @@
+raspi3-firmware (1.20180619-1) unstable; urgency=medium
+
+  * New upstream version 1.20180619-1
+  * Updated the VCS URLs to salsa.debian.org
+  * Differentiated the two proprietary licenses in debian/copyright to
+    please Lintian
+
+ -- Gunnar Wolf <gwolf@debian.org>  Wed, 18 Jul 2018 14:05:26 -0500
+
 raspi3-firmware (1.20180316-3) unstable; urgency=medium
 
   * correct path in postinst script

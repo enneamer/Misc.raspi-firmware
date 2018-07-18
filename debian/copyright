@@ -5,7 +5,7 @@ Source: https://github.com/raspberrypi/firmware
 Files: boot/*
 Copyright: 2006, Broadcom Corporation
            2015, Raspberry Pi (Trading) Ltd
-License: Proprietary
+License: Proprietary_1
  All rights reserved.
  .
  Redistribution.  Redistribution and use in binary form, without
@@ -37,7 +37,7 @@ License: Proprietary
 Files: brcm80211/*
 Comment: downloaded from https://github.com/RPi-Distro/firmware-nonfree/blob/master/brcm80211/brcm/brcmfmac43430-sdio.txt
 Copyright: 2015 Broadcom Corporation
-License: Proprietary
+License: Proprietary_2
  SOFTWARE LICENSE AGREEMENT
  .
  Unless you and Broadcom Corporation (“Broadcom”) execute a separate written
