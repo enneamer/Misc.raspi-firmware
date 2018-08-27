@@ -1,6 +1,7 @@
 raspi3-firmware (1.20180619-1) unstable; urgency=medium
 
   * New upstream version 1.20180619-1
+  * Added myself as an uploader
   * Updated the VCS URLs to salsa.debian.org
   * Differentiated the two proprietary licenses in debian/copyright to
     please Lintian
