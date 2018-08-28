@@ -1,3 +1,9 @@
+raspi3-firmware (1.20180619-2) UNRELEASED; urgency=medium
+
+  * Added support for installing the 3B+ firmware
+
+ -- Gunnar Wolf <gwolf@debian.org>  Mon, 27 Aug 2018 19:00:06 -0500
+
 raspi3-firmware (1.20180619-1) unstable; urgency=medium
 
   * New upstream version 1.20180619-1
