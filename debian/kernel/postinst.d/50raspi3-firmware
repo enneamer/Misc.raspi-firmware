@@ -68,15 +68,14 @@ pi3bp_dtb=${dtb_path}/bcm2837-rpi-3-b-plus.dtb
 latest_kernel_basename=$(basename "$latest_kernel")
 latest_initrd_basename=$(basename "$latest_initrd")
 
-if [ "arm64" = "$arch" ]; then
+# Truncate the config.txt file so that we start with a blank slate
+echo >/boot/firmware/config.txt
+
+if [ "$arch" = "arm64" ]; then
   cat >/boot/firmware/config.txt <<EOF
 # Switch the CPU from ARMv7 into ARMv8 (aarch64) mode
 arm_control=0x200
 
-EOF
-else
-  # Truncate the file so that we can append in the next statement
-  cat >/boot/firmware/config.txt <<EOF
 EOF
 fi
 
@@ -99,11 +98,19 @@ if [ $kernelmajor -ge 4 ]; then
   fi
 fi
 
+
+# Default configurations, overridable at /etc/default/raspi3-firmware
+CMA=64M
+ROOTPART=/dev/mmcblk0p2
+if [ -r /etc/default/raspi3-firmware ]; then
+        . /etc/default/raspi3-firmware
+fi
+
 # Our cmdline.txt is the default (see http://elinux.org/RPi_cmdline.txt), but
 # without parameters for drivers we do not have (e.g. dwc_otg.lpm_enable) or
 # parameters we do not need (e.g. rootfstype=, as we are using an initrd).
 cat >/boot/firmware/cmdline.txt <<EOF
-console=tty0 console=${serial} root=/dev/mmcblk0p2 rw elevator=deadline fsck.repair=yes net.ifnames=0 cma=64M rootwait
+console=tty0 console=${serial} root=$ROOTPART rw elevator=deadline fsck.repair=yes net.ifnames=0 cma=$CMA rootwait
 EOF
 
 cd /boot/firmware
