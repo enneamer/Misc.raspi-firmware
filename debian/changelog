@@ -16,6 +16,10 @@ raspi3-firmware (1.20181112-1) unstable; urgency=medium
   * Encode the files to be excluded from the orig.tar.gz in d/copyright so
     that uscan produces a suitable tarball
 
+  [ Gunnar Wolf ]
+  * Make sure that firmware hooks get triggered after initrd hooks
+    (Closes: #910790). Thanks to Matthias Lüscher!
+
  -- Gunnar Wolf <gwolf@debian.org>  Mon, 27 Aug 2018 19:00:06 -0500
 
 raspi3-firmware (1.20180619-1) unstable; urgency=medium
