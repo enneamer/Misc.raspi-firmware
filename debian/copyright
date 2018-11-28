@@ -35,7 +35,7 @@ License: Proprietary_1
  DAMAGE.
 
 Files: brcm80211/*
-Comment: downloaded from https://github.com/RPi-Distro/firmware-nonfree/blob/master/brcm80211/brcm/brcmfmac43430-sdio.txt
+Comment: downloaded from https://github.com/RPi-Distro/firmware-nonfree/blob/master/brcm/brcmfmac43430-sdio.txt
 Copyright: 2015 Broadcom Corporation
 License: Proprietary_2
  SOFTWARE LICENSE AGREEMENT
