@@ -3,9 +3,10 @@ raspi3-firmware (1.20181112-1) unstable; urgency=medium
   [ Gunnar Wolf ]
   * Added support for installing the 3B+ firmware
   * Add configurable options for cmdline.txt (Closes: #903543)
-  * Add brcm80211/brcmfmac43430-sdio.txt via a quilt patch, to solve the
-    issue of uscan not providing a full tarball to work from. Thanks to
-    Romain Perier for his help!
+  * Add brcm80211/brcmfmac43430-sdio.txt and
+    brcm80211/brcmfmac43455-sdio.txt via a quilt patch, to solve the issue
+    of uscan not providing a full tarball to work from. Thanks to Romain
+    Perier for his help!
 
   [ Ondřej Nový ]
   * d/copyright: Use https protocol in Format field
