@@ -6,7 +6,7 @@ raspi3-firmware (1.20181112-1) unstable; urgency=medium
   * Add brcm80211/brcmfmac43430-sdio.txt,
     brcm80211/brcmfmac43455-sdio.txt  and brcm80211/brcmfmac43455.clm_blob
     via a quilt patch, to solve the issue of uscan not providing a full
-    tarball to work from. Thanks to Romain Perier for his help!
+    tarball to work from. Thanks to Romain Perier for his help! (Closes: #897234)
   * Make sure that firmware hooks get triggered after initrd hooks
     (Closes: #910790). Thanks to Matthias Lüscher!
 
