@@ -1,3 +1,11 @@
+raspi3-firmware (1.20181112-2) UNRELEASED; urgency=medium
+
+  [ Romain Perier ]
+  * d/kernel/postinst.d/z50-raspi3-firmware: Allow the kernel image and the
+    initramfs usage to be configurable from /etc/default/raspi3-firmware
+
+ -- Romain Perier <romain.perier@gmail.com>  Wed, 05 Dec 2018 19:38:22 +0100
+
 raspi3-firmware (1.20181112-1) unstable; urgency=medium
 
   [ Gunnar Wolf ]
