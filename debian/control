@@ -2,7 +2,9 @@ Source: raspi3-firmware
 Section: non-free/misc
 Priority: optional
 Maintainer: pkg-raspi <pkg-raspi-maintainers@lists.alioth.debian.org>
-Uploaders: Michael Stapelberg <stapelberg@debian.org>, Gunnar Wolf <gwolf@debian.org>
+Uploaders: Michael Stapelberg <stapelberg@debian.org>,
+ Gunnar Wolf <gwolf@debian.org>,
+ Romain Perier <romain.perier@gmail.com>
 Build-Depends: debhelper (>= 10)
 Standards-Version: 3.9.8
 Homepage: https://github.com/raspberrypi/firmware
