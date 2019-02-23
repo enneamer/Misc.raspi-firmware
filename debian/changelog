@@ -4,6 +4,9 @@ raspi3-firmware (1.20190215-1) UNRELEASED; urgency=medium
   * New upstream version 1.20190215
   * Added armel as a build architecture
   * Added Romain Perier as an uploader
+  * Replaced the binary package name with raspi-firmware, as we no longer
+    target only the Raspberry Pi 3 family. Source package rename should
+    follow Buster release.
 
   [ Romain Perier ]
   * d/kernel/postinst.d/z50-raspi3-firmware: Allow the kernel image and the
