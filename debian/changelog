@@ -4,18 +4,13 @@ raspi3-firmware (1.20190215-1) unstable; urgency=medium
   * New upstream version 1.20190215
   * Added armel as a build architecture
   * Added Romain Perier as an uploader
-  * Replaced the binary package name with raspi-firmware, as we no longer
-    target only the Raspberry Pi 3 family. Source package rename should
-    follow Buster release.
+  * Updated standards-version 3.9.8 → 4.3.0 (no changes needed)
 
   [ Romain Perier ]
   * d/kernel/postinst.d/z50-raspi3-firmware: Allow the kernel image and the
     initramfs usage to be configurable from /etc/default/raspi3-firmware
   * z50-raspi3-firmware: Add RPI 1 RPI Zero W DTBs when booting linux directly
   * Add support for the armel architecture
-
-  [ Gunnar Wolf ]
-  * Updated standards-version 3.9.8 → 4.3.0 (no changes needed)
 
  -- Gunnar Wolf <gwolf@debian.org>  Sun, 17 Feb 2019 21:59:36 -0600
 
