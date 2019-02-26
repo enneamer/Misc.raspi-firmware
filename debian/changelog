@@ -11,6 +11,7 @@ raspi3-firmware (1.20190215-1) UNRELEASED; urgency=medium
   [ Romain Perier ]
   * d/kernel/postinst.d/z50-raspi3-firmware: Allow the kernel image and the
     initramfs usage to be configurable from /etc/default/raspi3-firmware
+  * z50-raspi3-firmware: Add RPI 1 RPI Zero W DTBs when booting linux directly
   * Add support for the armel architecture
 
  -- Gunnar Wolf <gwolf@debian.org>  Sun, 17 Feb 2019 21:59:36 -0600
