@@ -1,4 +1,4 @@
-raspi3-firmware (1.20190215-2) UNRELEASED; urgency=medium
+raspi3-firmware (1.20190215-2~exp1) experimental; urgency=medium
 
   * Switch to package.maintscript
 
