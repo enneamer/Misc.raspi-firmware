@@ -34,3 +34,17 @@
 # of the KERNEL image. It can also be set to "no", in this case no
 # initramfs will be handled at all by the firmware.
 #INITRAMFS="auto"
+
+# Consoles to use for logging. This is a list separated by spaces.
+# A tty will be put on all consoles contained in this list, but the last
+# one will be used for system boot logs. If you want to use the default
+# consoles recommended for the RPIs, leave this value to "auto".
+# examples:
+# - for logging to an HDMI screen:
+#   CONSOLES="tty0"
+# - for logging to an uart:
+#   CONSOLES="ttyS1,115200"
+# - for logging system boot logs to uart and get a console on the HDMI
+#   screen and on the uart:
+#   CONSOLES="tty0 ttyS1,115200"
+#CONSOLES="auto"

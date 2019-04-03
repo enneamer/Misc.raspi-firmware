@@ -1,8 +1,10 @@
 raspi3-firmware (1.20190215-2~exp2) UNRELEASED; urgency=medium
 
   * z50-raspi3-firmware: Change to use arm_64bit=1 (Closes: #925062)
+  * z50-raspi3-firmware: Make consoles configurable for cmdline.txt
+   (Closes: #926325)
 
- -- Romain Perier <romain.perier@gmail.com>  Tue, 26 Mar 2019 15:57:11 +0100
+ -- Romain Perier <romain.perier@gmail.com>  Wed, 03 Apr 2019 19:21:40 +0200
 
 raspi3-firmware (1.20190215-2~exp1) experimental; urgency=medium
 

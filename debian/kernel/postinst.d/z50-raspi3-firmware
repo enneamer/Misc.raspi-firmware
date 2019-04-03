@@ -48,6 +48,7 @@ CMA=64M
 ROOTPART=/dev/mmcblk0p2
 KERNEL="auto"
 INITRAMFS="auto"
+CONSOLES="auto"
 if [ -r /etc/default/raspi3-firmware ]; then
         . /etc/default/raspi3-firmware
 fi
@@ -85,13 +86,15 @@ if [ "$KERNEL" = "auto" ]; then
   cp "$latest_kernel" /boot/firmware/
   cp "$latest_initrd" /boot/firmware/
 
-  serial="ttyAMA0,115200"
-  kernelmajor=$(echo "${latest_kernel_basename}" | sed 's,^vmlinuz-,,g' | cut -d. -f 1)
-  kernelminor=$(echo "${latest_kernel_basename}" | cut -d. -f 2)
-  if [ $kernelmajor -ge 4 ]; then
-    if [ $kernelminor -ge 14 ]; then
-      # Since Linux 4.14, /dev/ttyS1 is the UART on the pinheader.
-      serial="ttyS1,115200"
+  if [ "$CONSOLES" = "auto" ]; then
+    serial="ttyAMA0,115200"
+    kernelmajor=$(echo "${latest_kernel_basename}" | sed 's,^vmlinuz-,,g' | cut -d. -f 1)
+    kernelminor=$(echo "${latest_kernel_basename}" | cut -d. -f 2)
+    if [ $kernelmajor -ge 4 ]; then
+      if [ $kernelminor -ge 14 ]; then
+        # Since Linux 4.14, /dev/ttyS1 is the UART on the pinheader.
+        serial="ttyS1,115200"
+      fi
     fi
   fi
 fi
@@ -127,8 +130,19 @@ fi
 # Our cmdline.txt is the default (see http://elinux.org/RPi_cmdline.txt), but
 # without parameters for drivers we do not have (e.g. dwc_otg.lpm_enable) or
 # parameters we do not need (e.g. rootfstype=, as we are using an initrd).
+# We leave the consoles configurable.
+
+pre_cmdline="console=tty0 console=${serial}"
+
+if [ "$CONSOLES" != "auto" ]; then
+  pre_cmdline=""
+  for console in $CONSOLES; do
+    pre_cmdline= "${pre_cmdline} console=${console}"
+  done
+fi
+
 cat >/boot/firmware/cmdline.txt <<EOF
-console=tty0 console=${serial} root=$ROOTPART rw elevator=deadline fsck.repair=yes net.ifnames=0 cma=$CMA rootwait
+${pre_cmdline} root=$ROOTPART rw elevator=deadline fsck.repair=yes net.ifnames=0 cma=$CMA rootwait
 EOF
 
 cd /boot/firmware
