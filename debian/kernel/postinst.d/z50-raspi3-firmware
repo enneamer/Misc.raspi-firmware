@@ -137,7 +137,7 @@ pre_cmdline="console=tty0 console=${serial}"
 if [ "$CONSOLES" != "auto" ]; then
   pre_cmdline=""
   for console in $CONSOLES; do
-    pre_cmdline= "${pre_cmdline} console=${console}"
+    pre_cmdline="${pre_cmdline} console=${console}"
   done
 fi
 
