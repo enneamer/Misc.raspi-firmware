@@ -1,3 +1,9 @@
+raspi3-firmware (1.20190215-3) UNRELEASED; urgency=medium
+
+  * d/copyright: Exclude pre-built kernel images from boot
+
+ -- Romain Perier <romain.perier@gmail.com>  Fri, 19 Apr 2019 13:57:48 +0200
+
 raspi3-firmware (1.20190215-2) unstable; urgency=medium
 
   * z50-raspi3-firmware: Change to use arm_64bit=1 (Closes: #925062)

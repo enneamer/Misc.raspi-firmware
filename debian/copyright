@@ -1,7 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: raspberrypi / firmware
 Source: https://github.com/raspberrypi/firmware
-Files-Excluded: boot/*.dtb
+Files-Excluded:
+ boot/COPYING.linux
+ boot/*.img
+ boot/*.dtb
  boot/overlays/*
  opt/*
  modules/*
