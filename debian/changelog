@@ -1,6 +1,6 @@
-raspi3-firmware (1.20190401-1) UNRELEASED; urgency=medium
+raspi3-firmware (1.20190517-1) UNRELEASED; urgency=medium
 
-  * New upstream version 1.20190401
+  * New upstream version 1.20190517
   * d/copyright: Exclude pre-built kernel images from boot (Closes: #924315)
 
  -- Romain Perier <romain.perier@gmail.com>  Fri, 19 Apr 2019 13:57:48 +0200
