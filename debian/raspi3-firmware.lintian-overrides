@@ -1,20 +1,33 @@
 # The package distributes non-free binaries (for which the source is not
 # public) and contains bootloader code, so override a bunch of lintian warnings
 binary-from-other-architecture usr/lib/raspi3-firmware/start.elf
+binary-from-other-architecture usr/lib/raspi3-firmware/start4.elf
 binary-from-other-architecture usr/lib/raspi3-firmware/start_cd.elf
+binary-from-other-architecture usr/lib/raspi3-firmware/start4cd.elf
 binary-from-other-architecture usr/lib/raspi3-firmware/start_db.elf
+binary-from-other-architecture usr/lib/raspi3-firmware/start4db.elf
 binary-from-other-architecture usr/lib/raspi3-firmware/start_x.elf
+binary-from-other-architecture usr/lib/raspi3-firmware/start4x.elf
 
 embedded-library usr/lib/raspi3-firmware/start.elf: libpng
+embedded-library usr/lib/raspi3-firmware/start4.elf: libpng
 embedded-library usr/lib/raspi3-firmware/start_db.elf: libpng
+embedded-library usr/lib/raspi3-firmware/start4db.elf: libpng
+embedded-library usr/lib/raspi3-firmware/start4db.elf: libtheora
 embedded-library usr/lib/raspi3-firmware/start_db.elf: libtheora
 embedded-library usr/lib/raspi3-firmware/start_x.elf: libpng
+embedded-library usr/lib/raspi3-firmware/start4x.elf: libpng
 embedded-library usr/lib/raspi3-firmware/start_x.elf: libtheora
+embedded-library usr/lib/raspi3-firmware/start4x.elf: libtheora
 
 statically-linked-binary usr/lib/raspi3-firmware/start.elf
+statically-linked-binary usr/lib/raspi3-firmware/start4.elf
 statically-linked-binary usr/lib/raspi3-firmware/start_cd.elf
+statically-linked-binary usr/lib/raspi3-firmware/start4cd.elf
 statically-linked-binary usr/lib/raspi3-firmware/start_db.elf
+statically-linked-binary usr/lib/raspi3-firmware/start4db.elf
 statically-linked-binary usr/lib/raspi3-firmware/start_x.elf
+statically-linked-binary usr/lib/raspi3-firmware/start4x.elf
 
 binary-has-unneeded-section usr/lib/raspi3-firmware/start.elf .comment
 binary-has-unneeded-section usr/lib/raspi3-firmware/start_cd.elf .comment
