@@ -1,6 +1,6 @@
 # This is non-free firmware, sourceless files are allowed
-raspi3-firmware source: source-contains-prebuilt-binary boot/start.elf
-raspi3-firmware source: source-contains-prebuilt-binary boot/start_cd.elf
-raspi3-firmware source: source-contains-prebuilt-binary boot/start_db.elf
-raspi3-firmware source: source-contains-prebuilt-binary boot/start_x.elf
-raspi3-firmware source: debian-watch-may-check-gpg-signature
+raspi-firmware source: source-contains-prebuilt-binary boot/start.elf
+raspi-firmware source: source-contains-prebuilt-binary boot/start_cd.elf
+raspi-firmware source: source-contains-prebuilt-binary boot/start_db.elf
+raspi-firmware source: source-contains-prebuilt-binary boot/start_x.elf
+raspi-firmware source: debian-watch-may-check-gpg-signature
