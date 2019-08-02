@@ -24,7 +24,7 @@ if ischroot ; then
 elif test -e /usr/bin/systemd-detect-virt && systemd-detect-virt -q ; then
   true # virtualization detected - skip mount point check
 elif ! mountpoint -q /boot/firmware; then
-  echo "raspi3-firmware: missing /boot/firmware, did you forget to mount it?" >&2
+  echo "raspi-firmware: missing /boot/firmware, did you forget to mount it?" >&2
   exit 1
 fi
 
@@ -33,24 +33,24 @@ mkdir -p /boot/firmware
 
 latest_kernel=$(ls -1 /boot/vmlinuz-* | grep -v '\.dpkg-bak$' | sort -V -r | head -1)
 if [ -z "$latest_kernel" ]; then
-  echo "raspi3-firmware: no kernel found in /boot/vmlinuz-*, cannot populate /boot/firmware"
+  echo "raspi-firmware: no kernel found in /boot/vmlinuz-*, cannot populate /boot/firmware"
   exit 0
 fi
 
 latest_initrd=$(ls -1 /boot/initrd.img-* | grep -v '\.dpkg-bak$' | sort -V -r | head -1)
 if [ -z "$latest_initrd" ]; then
-  echo "raspi3-firmware: no initrd found in /boot/initrd.img-*, cannot populate /boot/firmware"
+  echo "raspi-firmware: no initrd found in /boot/initrd.img-*, cannot populate /boot/firmware"
   exit 0
 fi
 
-# Default configurations, overridable at /etc/default/raspi3-firmware
+# Default configurations, overridable at /etc/default/raspi-firmware
 CMA=64M
 ROOTPART=/dev/mmcblk0p2
 KERNEL="auto"
 INITRAMFS="auto"
 CONSOLES="auto"
-if [ -r /etc/default/raspi3-firmware ]; then
-        . /etc/default/raspi3-firmware
+if [ -r /etc/default/raspi-firmware ]; then
+        . /etc/default/raspi-firmware
 fi
 
 # copy and rename the available device tree binaries
@@ -150,7 +150,7 @@ EOF
 cd /boot/firmware
 for file in vmlinuz-* initrd.img-*; do
   if [ ! -e "/boot/$file" ]; then
-    echo "raspi3-firmware: deleting obsolete /boot/firmware/$file (no longer in /boot)"
+    echo "raspi-firmware: deleting obsolete /boot/firmware/$file (no longer in /boot)"
     # Keep going if cleanup of individual files fails. It is better for the end
     # user to have a working package upgrade and a slight waste of space than a
     # broken upgrade.
