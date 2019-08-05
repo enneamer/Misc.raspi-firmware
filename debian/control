@@ -25,8 +25,9 @@ Architecture: arm64 armhf armel
 Depends: ${shlibs:Depends}, ${misc:Depends}, dosfstools
 Breaks: linux-firmware-raspi3 (<< 1.20161123-2), raspi3-firmware (<< 1.20190718-1~)
 Replaces: linux-firmware-raspi3 (<< 1.20161123-2), raspi3-firmware (<< 1.20190718-1~)
-Description: Raspberry Pi 2 and 3 GPU firmware and bootloaders
+Description: Raspberry Pi family GPU firmware and bootloaders
  This package contains all the proprietary files necessary to boot a
- Raspberry Pi 2 or 3 board.
+ Raspberry Pi board. This should work wih all models in the 0, 1, 2 and
+ 3 families.
  .
  Raspberry Pi is a trademark of the Raspberry Pi Foundation.
