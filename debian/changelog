@@ -14,6 +14,10 @@ raspi-firmware (1.20190718-1) unstable; urgency=medium
     With many thanks to Charles Fendt for the tests (#932158).
   * The DTB addition in the linux source package is tracked in #932157.
 
+  [ Gunnar Wolf ]
+  * Added Rules-Require-Root: no to debian/control (plus section and
+    priority to a binpkg section)
+
  -- Romain Perier <romain.perier@gmail.com>  Mon, 15 Jul 2019 21:07:16 +0200
 
 raspi3-firmware (1.20190620+1-1) unstable; urgency=medium
