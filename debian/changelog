@@ -20,6 +20,8 @@ raspi-firmware (1.20190718-1) unstable; urgency=medium
   * Rename conffiles to reflect package name change
   * Transitional package should be in the oldlibs section
   * Add code to handle custom kernel options (Closes: #934833)
+  * Renamed repository dropping the "3" after raspi; reflected it in Vcs-
+    Git and Vcs-Browser
 
  -- Romain Perier <romain.perier@gmail.com>  Mon, 15 Jul 2019 21:07:16 +0200
 
