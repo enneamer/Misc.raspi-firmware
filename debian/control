@@ -17,7 +17,7 @@ Package: raspi3-firmware
 Depends: raspi-firmware, ${misc:Depends}
 Architecture: all
 Priority: optional
-Section: non-free/misc
+Section: non-free/oldlibs
 Description: transitional package
  This is a transitional package. It can safely be removed.
 
