@@ -23,8 +23,10 @@ include /usr/share/dpkg/default.mk
 
 override_dh_install:
 	dh_install
-	rm debian/raspi-firmware/usr/lib/raspi-firmware/LICENCE.broadcom
-	base64 < brcm80211/brcmfmac43455-sdio.clm_blob.base64 > debian/raspi-firmware/lib/firmware/brcm80211
+	# Affected paths exist only when building the binary packages;
+	# the conditionals will avoid FTBFS
+	[ ! -f  debian/raspi-firmware/usr/lib/raspi-firmware/LICENCE.broadcom ] || rm debian/raspi-firmware/usr/lib/raspi-firmware/LICENCE.broadcom
+	[ ! -d debian/raspi-firmware/lib/firmware ] || base64 < brcm80211/brcmfmac43455-sdio.clm_blob.base64 > debian/raspi-firmware/lib/firmware/brcm80211
 
 # debmake generated override targets
 # This is example for Cmake (See http://bugs.debian.org/641051 )
