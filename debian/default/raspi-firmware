@@ -48,3 +48,7 @@
 #   screen and on the uart:
 #   CONSOLES="tty0 ttyS1,115200"
 #CONSOLES="auto"
+
+# Create a file "/etc/default/raspi-firmware-custom" to add custom parameter
+# to startup the kernel. Maybe not all options are supported.
+# (see https://www.raspberrypi.org/documentation/configuration/config-txt/)

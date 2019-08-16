@@ -125,9 +125,17 @@ if [ "$INITRAMFS" != "no" ]; then
 # For details on the initramfs directive, see
 # https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=10532
 initramfs ${latest_initrd_basename}
+
 EOF
 fi
 
+firmware_custom="/etc/default/raspi-firmware-custom"
+if [ -f "$firmware_custom" ]; then
+  cat >>/boot/firmware/config.txt <<EOF
+# Inserted by ${firmware_custom}
+`cat ${firmware_custom}`
+EOF
+fi
 
 # Our cmdline.txt is the default (see http://elinux.org/RPi_cmdline.txt), but
 # without parameters for drivers we do not have (e.g. dwc_otg.lpm_enable) or

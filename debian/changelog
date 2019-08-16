@@ -19,6 +19,7 @@ raspi-firmware (1.20190718-1) unstable; urgency=medium
     priority to a binpkg section)
   * Rename conffiles to reflect package name change
   * Transitional package should be in the oldlibs section
+  * Add code to handle custom kernel options (Closes: #934833)
 
  -- Romain Perier <romain.perier@gmail.com>  Mon, 15 Jul 2019 21:07:16 +0200
 

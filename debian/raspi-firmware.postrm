@@ -1,0 +1,14 @@
+#!/bin/sh
+# vim:ts=2:sw=2:et
+
+set -e
+
+case "$1" in
+  purge)
+         rm -f /etc/default/raspi-firmware-custom
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
