@@ -1,5 +1,11 @@
 rm_conffile /etc/kernel/postinst.d/linux-firmware-raspi3 1.20161123-2
-mv_conffile /etc/kernel/postrm.d/50raspi3-firmware /etc/kernel/postrm.d/z50-raspi3-firmware
-mv_conffile /etc/kernel/postinst.d/50raspi3-firmware /etc/kernel/postinst.d/z50-raspi3-firmware
-mv_conffile /etc/initramfs/post-update.d/50raspi3-firmware /etc/initramfs/post-update.d/z50-raspi3-firmware
+
+# raspi3-firmware package was renamed to raspi-firmware at 1.20190718-1
+mv_conffile /etc/kernel/postrm.d/50raspi3-firmware         /etc/kernel/postrm.d/z50-raspi-firmware          1.20190718-1~
+mv_conffile /etc/kernel/postinst.d/50raspi3-firmware       /etc/kernel/postinst.d/z50-raspi-firmware        1.20190718-1~
+mv_conffile /etc/initramfs/post-update.d/50raspi3-firmware /etc/initramfs/post-update.d/z50-raspi-firmware  1.20190718-1~
+
+mv_conffile /etc/kernel/postrm.d/z50-raspi3-firmware         /etc/kernel/postrm.d/z50-raspi-firmware
+mv_conffile /etc/kernel/postinst.d/z50-raspi3-firmware       /etc/kernel/postinst.d/z50-raspi-firmware
+mv_conffile /etc/initramfs/post-update.d/z50-raspi3-firmware /etc/initramfs/post-update.d/z50-raspi-firmware
 

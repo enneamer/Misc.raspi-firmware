@@ -17,6 +17,7 @@ raspi-firmware (1.20190718-1) unstable; urgency=medium
   [ Gunnar Wolf ]
   * Added Rules-Require-Root: no to debian/control (plus section and
     priority to a binpkg section)
+  * Rename conffiles to reflect package name change
 
  -- Romain Perier <romain.perier@gmail.com>  Mon, 15 Jul 2019 21:07:16 +0200
 
