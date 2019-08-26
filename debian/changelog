@@ -1,3 +1,9 @@
+raspi-firmware (1.20190819-1) UNRELEASED; urgency=medium
+
+  * New upstream version 1.20190819
+
+ -- Romain Perier <romain.perier@gmail.com>  Mon, 26 Aug 2019 19:27:01 +0200
+
 raspi-firmware (1.20190718-1) unstable; urgency=medium
 
   [ Romain Perier ]
