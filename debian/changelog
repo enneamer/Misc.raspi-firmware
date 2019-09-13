@@ -1,6 +1,6 @@
-raspi-firmware (1.20190819-1) UNRELEASED; urgency=medium
+raspi-firmware (1.20190819-1) unstable; urgency=medium
 
-  * New upstream version 1.20190819
+  * New upstream version 1.20190819 (Closes: #935919)
 
  -- Romain Perier <romain.perier@gmail.com>  Mon, 26 Aug 2019 19:27:01 +0200
 
