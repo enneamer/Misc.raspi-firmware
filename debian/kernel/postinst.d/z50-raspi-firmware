@@ -90,13 +90,11 @@ if [ "$KERNEL" = "auto" ]; then
 
   if [ "$CONSOLES" = "auto" ]; then
     serial="ttyAMA0,115200"
-    kernelmajor=$(echo "${latest_kernel_basename}" | sed 's,^vmlinuz-,,g' | cut -d. -f 1)
-    kernelminor=$(echo "${latest_kernel_basename}" | cut -d. -f 2)
-    if [ $kernelmajor -ge 4 ]; then
-      if [ $kernelminor -ge 14 ]; then
-        # Since Linux 4.14, /dev/ttyS1 is the UART on the pinheader.
-        serial="ttyS1,115200"
-      fi
+    kernelmajmin=$(($(echo $latest_kernel_basename | sed -n \
+                 's/^vmlinu.-\([0-9]*\)\.\([0-9]*\)\..*$/\1*1000+\2/p')))
+    if [ $kernelmajmin -ge 4014 ]; then
+      # Since Linux 4.14, /dev/ttyS1 is the UART on the pinheader.
+      serial="ttyS1,115200"
     fi
   fi
 fi

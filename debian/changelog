@@ -1,3 +1,10 @@
+raspi-firmware (1.20190819-2) UNRELEASED; urgency=medium
+
+  * Fix serial console output sent to bluetooth port with kernel 5.x.
+    Thanks to Thorsten Glaser (Closes: #941974)
+
+ -- Romain Perier <romain.perier@gmail.com>  Thu, 10 Oct 2019 13:18:57 +0200
+
 raspi-firmware (1.20190819-1) unstable; urgency=medium
 
   * New upstream version 1.20190819 (Closes: #935919)
