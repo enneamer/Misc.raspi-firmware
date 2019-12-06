@@ -1,4 +1,4 @@
-raspi-firmware (1.20190819-2) UNRELEASED; urgency=medium
+raspi-firmware (1.20190819-2) unstable; urgency=medium
 
   * Fix serial console output sent to bluetooth port with kernel 5.x.
     Thanks to Thorsten Glaser (Closes: #941971)
