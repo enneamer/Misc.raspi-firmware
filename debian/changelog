@@ -1,3 +1,9 @@
+raspi-firmware (1.20190819-3) UNRELEASED; urgency=medium
+
+  * Transitional package should not have Architecture: all (Closes: #947804)
+
+ -- Romain Perier <romain.perier@gmail.com>  Fri, 03 Jan 2020 13:52:19 +0100
+
 raspi-firmware (1.20190819-2) unstable; urgency=medium
 
   * Fix serial console output sent to bluetooth port with kernel 5.x.

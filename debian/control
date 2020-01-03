@@ -15,7 +15,7 @@ XS-Autobuild: yes
 
 Package: raspi3-firmware
 Depends: raspi-firmware, ${misc:Depends}
-Architecture: all
+Architecture: arm64 armhf armel
 Priority: optional
 Section: non-free/oldlibs
 Description: transitional package
