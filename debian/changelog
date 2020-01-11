@@ -1,4 +1,4 @@
-raspi-firmware (1.20190925-1) UNRELEASED; urgency=medium
+raspi-firmware (1.20190925-1) unstable; urgency=medium
 
   * New upstream version 1.20190925
   * Transitional package should not have Architecture: all (Closes: #947804)
