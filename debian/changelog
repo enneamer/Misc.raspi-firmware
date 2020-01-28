@@ -1,3 +1,12 @@
+raspi-firmware (1.20200114-1) unstable; urgency=medium
+
+  * New upstream version 1.20200114
+  * Updated standards-version 4.3.0 → 4.5.0 (no changes needed)
+  * Replaced tabs with spacs throughout debian/copyright to comply with
+    DEP-5 and keep lintian happy ☺
+
+ -- Gunnar Wolf <gwolf@debian.org>  Tue, 28 Jan 2020 12:49:12 -0600
+
 raspi-firmware (1.20190925-1) unstable; urgency=medium
 
   * New upstream version 1.20190925
