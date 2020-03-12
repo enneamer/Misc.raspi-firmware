@@ -1,10 +1,13 @@
-raspi-firmware (1.20200114-2) UNRELEASED; urgency=medium
+raspi-firmware (1.20200114-2) unstable; urgency=medium
 
-  [ Valentin Vidic ]
-  * Fix dtb names mismatch in z50-raspi-firmware
-  * Add new option upstream_kernel=1 to the config.txt
+  * Fix dtb names mismatch in z50-raspi-firmware and add new option
+    upstream_kernel=1 to the config.txt. These two changes allow for the
+    correct boot on RPi families 1 and 0. Thanks to Valentin Vidic for the
+    fix! (no BTS bugs fixed, refer to Salsa merge request 12)
+  * Fixes the serial console in models that lack wireless
+    communication. Again, thanks to Valentin Vidic! (Salsa merge request 13)
 
- -- Romain Perier <romain.perier@gmail.com>  Mon, 17 Feb 2020 19:00:27 +0100
+ -- Gunnar Wolf <gwolf@debian.org>  Thu, 12 Mar 2020 12:16:27 -0600
 
 raspi-firmware (1.20200114-1) unstable; urgency=medium
 
