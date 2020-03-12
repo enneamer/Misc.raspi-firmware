@@ -79,7 +79,9 @@ if [ "$KERNEL" = "auto" ]; then
   if [ "$CONSOLES" = "auto" ]; then
     serial="ttyAMA0,115200"
     if ! grep -Esq '^Raspberry Pi (Zero$|Compute|(2 )?Model [AB])' /proc/device-tree/model
-    then # wifi/bluetooth models use different serial device
+    then
+      # wifi/bluetooth models use different serial device
+      # https://www.raspberrypi.org/documentation/configuration/uart.md
       kernelmajmin=$(($(echo $latest_kernel_basename | sed -n \
                    's/^vmlinu.-\([0-9]*\)\.\([0-9]*\)\..*$/\1*1000+\2/p')))
       if [ $kernelmajmin -ge 4014 ]; then
