@@ -1,5 +1,6 @@
-raspi-firmware (1.20200114-3) UNRELEASED; urgency=medium
+raspi-firmware (1.20200212-1) UNRELEASED; urgency=medium
 
+  * New upstream version 1.20200212
   * debian/copyright: Exclude .github/ISSUE_TEMPLATE/bug_report.md
 
  -- Romain Perier <romain.perier@gmail.com>  Mon, 30 Mar 2020 18:54:52 +0200
