@@ -1,3 +1,9 @@
+raspi-firmware (1.20200114-3) UNRELEASED; urgency=medium
+
+  * debian/copyright: Exclude .github/ISSUE_TEMPLATE/bug_report.md
+
+ -- Romain Perier <romain.perier@gmail.com>  Mon, 30 Mar 2020 18:54:52 +0200
+
 raspi-firmware (1.20200114-2) unstable; urgency=medium
 
   * Fix dtb names mismatch in z50-raspi-firmware and add new option

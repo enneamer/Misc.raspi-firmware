@@ -11,6 +11,7 @@ Files-Excluded:
  hardfp/*
  extra/*
  documentation/*
+ .github/*
  README.md
 Comment:
  Most of these files are binaries not tracked for this package
