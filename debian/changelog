@@ -1,3 +1,9 @@
+raspi-firmware (1.20200601-1) UNRELEASED; urgency=medium
+
+  * New upstream version 1.20200601
+
+ -- Romain Perier <romain.perier@gmail.com>  Mon, 13 Jul 2020 11:14:15 +0200
+
 raspi-firmware (1.20200212-1) unstable; urgency=medium
 
   * New upstream version 1.20200212
