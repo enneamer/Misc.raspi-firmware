@@ -1,3 +1,9 @@
+raspi-firmware (1.20200601-2) UNRELEASED; urgency=medium
+
+  * Drop an ancient (pre-kernel 4.14) confusing bit of conditional code
+
+ -- Gunnar Wolf <gwolf@debian.org>  Wed, 05 Aug 2020 11:52:35 -0500
+
 raspi-firmware (1.20200601-1) unstable; urgency=medium
 
   [ Romain Perier ]
