@@ -14,6 +14,9 @@
 #
 # https://people.freedesktop.org/~narmstrong/meson_drm_doc/gpu/vc4.html
 #
+# Note that setting the CMA is not necessary in RPi4 (specifying it
+# might render your system unbootable!)
+#
 #CMA=64M
 
 # Filesystem to mount on root. If not specified, find what partition
