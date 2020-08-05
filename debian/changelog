@@ -1,6 +1,11 @@
 raspi-firmware (1.20200601-1) UNRELEASED; urgency=medium
 
+  [ Romain Perier ]
   * New upstream version 1.20200601
+
+  [ Gunnar Wolf ]
+  * Fix z50-raspi-firmware causing an unbootable system due to the
+    hardcoding of partition numbers (Closes: #964915)
 
  -- Romain Perier <romain.perier@gmail.com>  Mon, 13 Jul 2020 11:14:15 +0200
 

@@ -45,7 +45,8 @@ fi
 
 # Default configurations, overridable at /etc/default/raspi-firmware
 CMA=64M
-ROOTPART=/dev/mmcblk0p2
+ROOTPART=`findmnt -n --output=source /`
+if [ -z "$ROOTPART" ]; then ROOTPART=/dev/mmcblk0p2;fi
 KERNEL="auto"
 INITRAMFS="auto"
 CONSOLES="auto"
