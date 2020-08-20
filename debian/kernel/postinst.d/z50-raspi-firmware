@@ -44,8 +44,12 @@ if [ -z "$latest_initrd" ]; then
 fi
 
 # Default configurations, overridable at /etc/default/raspi-firmware
+#
+# Added an '|| true' to findmnt to avoid its failure breaking the install
+# running under a container or virtual environment that does not provide
+# a usable /proc
 CMA=64M
-ROOTPART=`findmnt -n --output=source /`
+ROOTPART=`findmnt -n --output=source /` || true
 if [ -z "$ROOTPART" ]; then ROOTPART=/dev/mmcblk0p2;fi
 KERNEL="auto"
 INITRAMFS="auto"

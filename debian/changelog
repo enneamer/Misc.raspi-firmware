@@ -1,3 +1,10 @@
+raspi-firmware (1.20200601-3) unstable; urgency=medium
+
+  * Fix ROOTPART on virtual environment, thanks to Francisco José R. M.
+    for pointing out to the culprit!
+
+ -- Gunnar Wolf <gwolf@debian.org>  Thu, 20 Aug 2020 11:34:50 -0500
+
 raspi-firmware (1.20200601-2) unstable; urgency=medium
 
   * Drop an ancient (pre-kernel 4.14) confusing bit of conditional code
