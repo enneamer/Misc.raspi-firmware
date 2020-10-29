@@ -148,7 +148,7 @@ else
 fi
 
 cat >/boot/firmware/cmdline.txt <<EOF
-${pre_cmdline} root=$ROOTPART rw elevator=deadline fsck.repair=yes net.ifnames=0 $SET_CMA rootwait
+${pre_cmdline} root=$ROOTPART rw fsck.repair=yes net.ifnames=0 $SET_CMA rootwait
 EOF
 
 cd /boot/firmware
