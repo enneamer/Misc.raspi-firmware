@@ -61,8 +61,8 @@ fi
 # copy and rename the available device tree binaries
 # the bootloader will pick the right device tree binary
 # if it is named according to the system on chip family name
-arch=$(dpkg --print-architecture)
-if [ "arm64" = "$arch" ]; then
+arch=$DPKG_MAINTSCRIPT_ARCH
+if [ "$arch" = "arm64" ]; then
   dtb_path="/usr/lib/linux-image-${latest_kernel#/boot/vmlinuz-}/broadcom"
 else
   # there is no vendor subdirectory for armhf

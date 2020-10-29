@@ -1,3 +1,10 @@
+raspi-firmware (1.20200601-4) UNRELEASED; urgency=medium
+
+  * Use DPKG_MAINTSCRIPT_ARCH for getting system architecture instead of
+    dpkg --print-architecture (Closes: #971748)
+
+ -- Gunnar Wolf <gwolf@debian.org>  Wed, 28 Oct 2020 23:49:05 -0600
+
 raspi-firmware (1.20200601-3) unstable; urgency=medium
 
   * Fix ROOTPART on virtual environment, thanks to Francisco José R. M.
