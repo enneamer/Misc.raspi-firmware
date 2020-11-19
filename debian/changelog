@@ -1,4 +1,4 @@
-raspi-firmware (1.20201022-1) UNRELEASED; urgency=medium
+raspi-firmware (1.20201022-1) unstable; urgency=medium
 
   * New upstream version 1.20201022
   * Use DPKG_MAINTSCRIPT_ARCH for getting system architecture instead of
