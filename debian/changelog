@@ -1,5 +1,6 @@
-raspi-firmware (1.20200601-4) UNRELEASED; urgency=medium
+raspi-firmware (1.20201022-1) UNRELEASED; urgency=medium
 
+  * New upstream version 1.20201022
   * Use DPKG_MAINTSCRIPT_ARCH for getting system architecture instead of
     dpkg --print-architecture (Closes: #971748)
   * Drop deprecated declaration of elevator=deadline (Closes: #971882)
