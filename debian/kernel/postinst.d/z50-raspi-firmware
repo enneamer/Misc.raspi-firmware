@@ -71,7 +71,8 @@ fi
 
 if [ "$KERNEL" = "auto" ]; then
   for dtb in ${dtb_path}/bcm*.dtb; do
-    [ -e "${dtb}" ] && cp "${dtb}" /boot/firmware/
+      [ -e "${dtb}" ] || continue
+      cp "${dtb}" /boot/firmware/
   done
 
   latest_kernel_basename=$(basename "$latest_kernel")

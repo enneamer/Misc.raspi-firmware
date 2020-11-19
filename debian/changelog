@@ -6,6 +6,7 @@ raspi-firmware (1.20201022-1) UNRELEASED; urgency=medium
   * Drop deprecated declaration of elevator=deadline (Closes: #971882)
   * Allow to pass arbitrary parameters to the kernel via
     /etc/default/raspi-extra-cmdline (Closes: #971883, #951744)
+  * Reliability fix when copying DTBs (Closes: #968376)
 
  -- Gunnar Wolf <gwolf@debian.org>  Wed, 28 Oct 2020 23:49:05 -0600
 
