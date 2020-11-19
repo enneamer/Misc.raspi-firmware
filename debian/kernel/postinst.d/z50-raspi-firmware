@@ -147,8 +147,13 @@ else
     SET_CMA="cma=$CMA"
 fi
 
+cmdline_custom="/etc/default/raspi-extra-cmdline"
+if [ -f "$cmdline_custom" ]; then
+    post_cmdline=`cat $cmdline_custom`
+fi
+
 cat >/boot/firmware/cmdline.txt <<EOF
-${pre_cmdline} root=$ROOTPART rw fsck.repair=yes net.ifnames=0 $SET_CMA rootwait
+${pre_cmdline} root=$ROOTPART rw fsck.repair=yes net.ifnames=0 $SET_CMA rootwait ${post_cmdline}
 EOF
 
 cd /boot/firmware
