@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim:ts=2:sw=2:et
 # see also:
-# https://kernel-handbook.alioth.debian.org/ch-update-hooks.html#s-kernel-hooks
+# https://kernel-team.pages.debian.net/kernel-handbook/ch-update-hooks.html#s-kernel-hooks
 
 set -e
 
