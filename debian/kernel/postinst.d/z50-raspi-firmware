@@ -124,7 +124,7 @@ if [ -f "$firmware_custom" ]; then
   cat >>/boot/firmware/config.txt <<EOF
 
 # Inserted by ${firmware_custom}
-`cat ${firmware_custom}`
+$(cat ${firmware_custom})
 EOF
 fi
 
@@ -166,7 +166,7 @@ fi
 
 cmdline_custom="/etc/default/raspi-extra-cmdline"
 if [ -f "$cmdline_custom" ]; then
-    post_cmdline=`cat $cmdline_custom`
+  post_cmdline=$(cat $cmdline_custom)
 fi
 
 cat >/boot/firmware/cmdline.txt <<EOF
