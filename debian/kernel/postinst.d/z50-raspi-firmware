@@ -31,12 +31,14 @@ fi
 # Ensure the target directory exists. See https://bugs.debian.org/887062
 mkdir -p /boot/firmware
 
+# shellcheck disable=SC2010
 latest_kernel=$(ls -1 /boot/vmlinuz-* | grep -v '\.dpkg-bak$' | sort -V -r | head -1)
 if [ -z "$latest_kernel" ]; then
   echo "raspi-firmware: no kernel found in /boot/vmlinuz-*, cannot populate /boot/firmware"
   exit 0
 fi
 
+# shellcheck disable=SC2010
 latest_initrd=$(ls -1 /boot/initrd.img-* | grep -v '\.dpkg-bak$' | sort -V -r | head -1)
 if [ -z "$latest_initrd" ]; then
   echo "raspi-firmware: no initrd found in /boot/initrd.img-*, cannot populate /boot/firmware"
