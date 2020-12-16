@@ -78,7 +78,7 @@ else
 fi
 
 if [ "$KERNEL" = "auto" ]; then
-  for dtb in ${dtb_path}/bcm*.dtb; do
+  for dtb in "${dtb_path}"/bcm*.dtb; do
       [ -e "${dtb}" ] || continue
       cp "${dtb}" /boot/firmware/
   done
