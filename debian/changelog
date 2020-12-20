@@ -1,3 +1,12 @@
+raspi-firmware (1.20201022-1.1) UNRELEASED; urgency=medium
+
+  * Team upload.
+
+  [ Diederik de Haas ]
+  * Fix arch detection of latest kernel (Closes: #975943).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 20 Dec 2020 10:49:04 -0300
+
 raspi-firmware (1.20201022-1) unstable; urgency=medium
 
   * New upstream version 1.20201022
