@@ -1,3 +1,10 @@
+raspi-firmware (1.20201022-3) UNRELEASED; urgency=medium
+
+  * One more stab at fixing architecture detection - It gets tricky! :-(
+    (Closes: #975943)
+
+ -- Gunnar Wolf <gwolf@debian.org>  Sun, 03 Jan 2021 17:00:16 -0600
+
 raspi-firmware (1.20201022-2) unstable; urgency=medium
 
   * Team upload.
