@@ -2,6 +2,7 @@ raspi-firmware (1.20201022-3) UNRELEASED; urgency=medium
 
   * One more stab at fixing architecture detection - It gets tricky! :-(
     (Closes: #975943)
+  * Dropped dependency on file - no longer needed
 
  -- Gunnar Wolf <gwolf@debian.org>  Sun, 03 Jan 2021 17:00:16 -0600
 
