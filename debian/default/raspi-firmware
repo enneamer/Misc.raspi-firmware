@@ -71,7 +71,7 @@
 #
 # For further details, please refer to bug reports #971748 and #975943.
 #
-#SETUP_AS_ARCH="arm64"
+#KERNEL_ARCH="arm64"
 
 # Create a file "/etc/default/raspi-firmware-custom" to add custom parameter
 # to startup the kernel. Maybe not all options are supported.

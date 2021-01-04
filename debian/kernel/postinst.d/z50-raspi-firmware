@@ -54,7 +54,7 @@ if [ -z "$ROOTPART" ]; then ROOTPART=/dev/mmcblk0p2;fi
 KERNEL="auto"
 INITRAMFS="auto"
 CONSOLES="auto"
-SETUP_AS_ARCH=''
+KERNEL_ARCH=''
 if [ -r /etc/default/raspi-firmware ]; then
         . /etc/default/raspi-firmware
 fi
@@ -62,8 +62,8 @@ fi
 # copy and rename the available device tree binaries
 # the bootloader will pick the right device tree binary
 # if it is named according to the system on chip family name
-if [ -n "$SETUP_AS_ARCH" ] ; then
-    arch=$SETUP_AS_ARCH
+if [ -n "$KERNEL_ARCH" ] ; then
+    arch=$KERNEL_ARCH
 else
     arch=$(dpkg --print-architecture)
 fi
