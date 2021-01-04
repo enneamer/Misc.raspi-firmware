@@ -1,4 +1,4 @@
-raspi-firmware (1.20201022-3) UNRELEASED; urgency=medium
+raspi-firmware (1.20201022-3) unstable; urgency=medium
 
   * One more stab at fixing architecture detection - It gets tricky! :-(
     (Closes: #975943)
