@@ -1,4 +1,4 @@
-raspi-firmware (1.20210111+ds-1) UNRELEASED; urgency=medium
+raspi-firmware (1.20210111+ds-1) unstable; urgency=medium
 
   * New upstream release
   * Several lintian low-priority messages cleaned
