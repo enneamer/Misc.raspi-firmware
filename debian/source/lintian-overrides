@@ -3,4 +3,8 @@ raspi-firmware source: source-contains-prebuilt-binary boot/start.elf
 raspi-firmware source: source-contains-prebuilt-binary boot/start_cd.elf
 raspi-firmware source: source-contains-prebuilt-binary boot/start_db.elf
 raspi-firmware source: source-contains-prebuilt-binary boot/start_x.elf
-raspi-firmware source: debian-watch-may-check-gpg-signature
+raspi-firmware source: debian-watch-does-not-check-gpg-signature
+# Files under brcm80211/* come from a different source, as explained in a
+# note in the relevant section of debian/copyright
+raspi-firmware source: unused-file-paragraph-in-dep5-copyright paragraph at line 51
+raspi-firmware source: wildcard-matches-nothing-in-dep5-copyright brcm80211/*

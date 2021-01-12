@@ -1,3 +1,20 @@
+raspi-firmware (1.20210111+ds-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+  * Several lintian low-priority messages cleaned
+    * debhelper compat 10→13
+    * Remove redundant Priority/Section tags from binary packages when
+      they replicate the source package's respective tag
+    * Vcs-Browser should not include the trailing ".git" particle
+    * Standards-version 4.5.0 → 4.5.1.0
+    * Override warnings "unused-file-paragraph-in-dep5-copyright" and
+      "wildcard-matches-nothing-in-dep5-copyright", as relevant files
+      came from a different source (documented in debian/copyright)
+    * Added "+ds" suffix to produced upstream version in debian/watch
+      indicating it is different from the upstream release
+
+ -- Gunnar Wolf <gwolf@debian.org>  Mon, 11 Jan 2021 17:57:36 -0600
+
 raspi-firmware (1.20201022-3) unstable; urgency=medium
 
   * One more stab at fixing architecture detection - It gets tricky! :-(
