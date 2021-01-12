@@ -1,3 +1,8 @@
 version=4
-opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/raspi-firmware-$1+ds\.tar\.gz/ \
-  https://github.com/raspberrypi/firmware/releases .*/v?(\d\S*)\.tar\.gz
+# Sometimes upstream adds a meaningless (to us) ".master" to the
+# version number. uversionmangle strips it. We repackage our source,
+# appending the +ds to the version number.
+#opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/raspi-firmware-$1+ds\.tar\.xz/,uversionmangle=s/\.master//,dversionmangle=s/\+ds//,repack=xz \
+opts=filenamemangle=s/.+\/v?(\d\S*)(\.master)?\.tar\.gz/raspi-firmware-$1+ds\.tar\.gz/,\
+       dversionmangle=s/\+ds//,repack,compression=xz \
+       https://github.com/raspberrypi/firmware/releases .*/v?(\d\S*)\.tar\.gz
