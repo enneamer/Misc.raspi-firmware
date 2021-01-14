@@ -87,10 +87,6 @@ if [ "$KERNEL" = "auto" ]; then
 
   cp "$latest_kernel" /boot/firmware/
   cp "$latest_initrd" /boot/firmware/
-
-  if [ "$CONSOLES" = "auto" ]; then
-      serial="ttyS1,115200"
-  fi
 fi
 
 
@@ -135,13 +131,25 @@ fi
 # parameters we do not need (e.g. rootfstype=, as we are using an initrd).
 # We leave the consoles configurable.
 
-pre_cmdline="console=tty0 console=${serial}"
-
-if [ "$CONSOLES" != "auto" ]; then
-  pre_cmdline=""
-  for console in $CONSOLES; do
-    pre_cmdline="${pre_cmdline} console=${console}"
-  done
+pre_cmdline=""
+if [ "$CONSOLES" = "auto" ]; then
+    # If the user did not specify $CONSOLES, fill in with values
+    # existing in the system. tty0 is guaranteed to exist, no need to
+    # probe.
+    pre_cmdline="console=tty0"
+    if [ -e /dev/ttyAMA0 ]; then
+	# ttyAMA0 is used in armel, armhf (RPi families 0, 1, 2)
+	pre_cmdline="$pre_cmdline console=ttyAMA0,115200"
+    fi
+    if [ -e /dev/ttyS1 ]; then
+	# ttyS1 is used in arm64 (RPi families 3, 4)
+	pre_cmdline="$pre_cmdline console=ttyS1,115200"
+    fi
+else
+    # The user has specified one or more consoles
+    for console in $CONSOLES; do
+	pre_cmdline="${pre_cmdline} console=${console}"
+    done
 fi
 
 # GPU and memory architecture are different in RPi model 4, and
