@@ -61,6 +61,10 @@
 #   screen and on the uart:
 #   CONSOLES="tty0 ttyS1,115200"
 #
+# Note that RPi families 0, 1, 2 usually present their UART at ttyAMA0, and
+# families 3 and 4 present it at ttyS1. "auto" will autodetect which is
+# available in your system.
+#
 #CONSOLES="auto"
 
 # Force the architecture to install the kernel as. You will most
