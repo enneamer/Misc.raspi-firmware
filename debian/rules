@@ -33,3 +33,9 @@ override_dh_install:
 #override_dh_auto_configure:
 #	dh_auto_configure -- \
 #	-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH)
+
+# The firmware looks like ELF files, but we are not to modify it
+# (neither strip it or strip DWARF debug information. Not only it's
+# not needed (and probably not useful), but it causes a FTBFS.
+override_dh_strip:
+override_dh_dwz:
