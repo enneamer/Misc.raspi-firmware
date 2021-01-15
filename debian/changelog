@@ -1,4 +1,4 @@
-raspi-firmware (1.20210111+ds-2) UNRELEASED; urgency=medium
+raspi-firmware (1.20210111+ds-2) unstable; urgency=medium
 
   * Added better detection code to provide a working serial console
   * dh_strip and dh_dwz should not be run over firmware files! Disable
