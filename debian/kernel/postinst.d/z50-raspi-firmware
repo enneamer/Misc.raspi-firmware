@@ -92,7 +92,17 @@ fi
 
 
 # Truncate the config.txt file so that we start with a blank slate
-: >/boot/firmware/config.txt
+echo <<EOF >/boot/firmware/config.txt
+# Do not modify this file!
+#
+# It is automatically generated upon install or update of either the
+# firmware or the Linux kernel.
+#
+# If you need to set boot-time parameters, do so via the
+# /etc/default/raspi-firmware or /etc/default/raspi-extra-cmdline
+#files.
+
+EOF
 
 if [ "$arch" = "arm64" ]; then
   cat >/boot/firmware/config.txt <<EOF
