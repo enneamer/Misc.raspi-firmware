@@ -67,6 +67,25 @@
 #
 #CONSOLES="auto"
 
+# In the RPi4 and p400 families, the video processor (GPU) has several
+# possible operating frequencies, but is known to corrupt the serial
+# console (switch to an invalid baud rate), as the UART (the component
+# which drives the serial ports) gets its clock from the GPU, as
+# explained here:
+#
+# https://www.raspberrypi.org/documentation/configuration/uart.md
+#
+# The clock speeds the RPi4 GPU uses are 360/500/550 MHz. If you
+# intend to use the serial console, you need to set GPU_FREQ to
+# 360. If you intend to use this computer as a desktop system, set it
+# to "auto". Both 500 and 550 MHz also corrupt the serial console.
+#
+# Do note that earlier models have fixed frequencies, and this setting
+# will be ignored if your board does not identify as a RPi 4 (any
+# model) or p400.
+#
+#GPU_FREQ="auto"
+
 # Force the architecture to install the kernel as. You will most
 # likely want to leave this setting alone; the only use case I have
 # found for this is when you want to run a 32-bit userland on a

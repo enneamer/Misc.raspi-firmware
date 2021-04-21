@@ -112,6 +112,16 @@ arm_64bit=1
 EOF
 fi
 
+if grep -q 'Raspberry Pi 4' /sys/firmware/devicetree/base/model
+then
+    # This matches all RPi4 boards ("Raspberry Pi 4 Model B Rev 1.4")
+    # and p400 full computer systems ("Raspberry Pi 400 Rev 1.0")
+    if [ "$GPU_FREQ" != "auto" ]
+    then
+	echo "core_freq=$GPU_FREQ" >> /boot/firmware/config.txt
+    fi
+fi
+
 cat >>/boot/firmware/config.txt <<EOF
 enable_uart=1
 upstream_kernel=1
