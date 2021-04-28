@@ -6,6 +6,7 @@ raspi-firmware (1.20210303+ds-2) UNRELEASED; urgency=medium
     needed for using the serial console in the RPi4 family
   * ignore *.old-dkms when configuring a new kernel/initrd (Closes:
     #983409)
+  * Applied some shellcheck fixes to improve clarity. Thanks Diederik!
 
  -- Gunnar Wolf <gwolf@debian.org>  Wed, 21 Apr 2021 00:52:21 -0500
 
