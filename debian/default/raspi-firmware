@@ -73,7 +73,7 @@
 # which drives the serial ports) gets its clock from the GPU, as
 # explained here:
 #
-# https://www.raspberrypi.org/documentation/configuration/uart.md
+# https://www.raspberrypi.com/documentation/computers/configuration.html#mini-uart-and-cpu-core-frequency
 #
 # The clock speeds the RPi4 GPU uses are 360/500/550 MHz. If you
 # intend to use the serial console, you need to set GPU_FREQ to
@@ -98,7 +98,7 @@
 
 # Create a file "/etc/default/raspi-firmware-custom" to add custom parameter
 # to startup the kernel. Maybe not all options are supported.
-# (see https://www.raspberrypi.org/documentation/configuration/config-txt/)
+# (see https://www.raspberrypi.com/documentation/computers/config_txt.html)
 #
 # To pass extra arbitrary parameters to the kernel at boot, you can specify
 # them in "/etc/default/raspi-extra-cmdline". Keep in mind they should be
