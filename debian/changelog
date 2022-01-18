@@ -1,3 +1,10 @@
+raspi-firmware (1.20220331+ds-3) unstable; urgency=medium
+
+  [ Diederik de Haas ]
+  * Specify CMA value to disable CMA allocation
+
+ -- Cyril Brulebois <cyril@debamax.com>  Mon, 29 Aug 2022 16:21:25 +0200
+
 raspi-firmware (1.20220331+ds-2) unstable; urgency=medium
 
   * Factorize Pi 4 detection, used for GPU_FREQ and CMA settings. Also

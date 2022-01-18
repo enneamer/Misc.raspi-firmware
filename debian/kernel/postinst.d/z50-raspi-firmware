@@ -187,6 +187,8 @@ fi
 # administrator has changed it, they should know what they are doing!)
 if [ "$CMA" = "64M" ] && pi_4_family; then
     SET_CMA=''
+elif [ "$CMA" = "0" ]
+    SET_CMA=''
 else
     SET_CMA="cma=$CMA"
 fi
