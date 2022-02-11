@@ -1,4 +1,4 @@
-raspi-firmware (1.20220120+ds-1) UNRELEASED; urgency=medium
+raspi-firmware (1.20220120+ds-1) unstable; urgency=medium
 
   * New upstream release
   * Update standards-version 4.5.1→4.6.0 (no changes needed)
