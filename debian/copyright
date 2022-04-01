@@ -260,7 +260,13 @@ License: Proprietary_2
 
 
 Files: debian/*
-Copyright: 2015 Paolo Pisati <paolo.pisati@canonical.com>
+Copyright: 2015-2022 Paolo Pisati <paolo.pisati@canonical.com>,
+	   	     Steve Langasek <steve.langasek@ubuntu.com>,
+		     Andy Whitcroft <apw@ubuntu.com>,
+		     Michael Stapelberg <stapelberg@debian.org>,
+		     Gunnar Wolf <gwolf@debian.org>,
+		     Romain Perier <romain.perier@gmail.com>,
+		     Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
