@@ -15,7 +15,7 @@ XS-Autobuild: yes
 
 Package: raspi3-firmware
 Depends: raspi-firmware, ${misc:Depends}
-Architecture: arm64 armhf armel
+Architecture: all
 Section: non-free/oldlibs
 Description: transitional package
  This is a transitional package. It can safely be removed.
