@@ -1,3 +1,10 @@
+raspi-firmware (1.20220328+ds-2) UNRELEASED; urgency=medium
+
+  * Change the binary package from declaring "arch: arm64 armhf armel"
+    to "arch: all" (firmware is in the end just data!)
+
+ -- Gunnar Wolf <gwolf@debian.org>  Fri, 01 Apr 2022 11:48:35 -0600
+
 raspi-firmware (1.20220328+ds-1) unstable; urgency=medium
 
   * New upstream release

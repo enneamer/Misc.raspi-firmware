@@ -21,7 +21,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: raspi-firmware
-Architecture: arm64 armhf armel
+Architecture: all
 Pre-Depends: dpkg (>= 1.17.14)
 Depends: ${shlibs:Depends}, ${misc:Depends}, dosfstools
 Breaks: linux-firmware-raspi3 (<< 1.20161123-2), raspi3-firmware (<< 1.20190718-1~)
