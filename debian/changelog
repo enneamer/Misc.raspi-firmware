@@ -1,3 +1,13 @@
+raspi-firmware (1.20220328+ds-1) unstable; urgency=medium
+
+  * New upstream release
+  * Fixes performance regression on RPi4 systems due to CPU clocks not
+    being exposed (Closes: #1007719)
+  * Fixes dual-screen setups not working on RPi4 systems (Closes:
+    #1005846)
+
+ -- Gunnar Wolf <gwolf@debian.org>  Thu, 31 Mar 2022 23:32:29 -0600
+
 raspi-firmware (1.20220120+ds-1) unstable; urgency=medium
 
   * New upstream release
