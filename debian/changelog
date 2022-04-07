@@ -4,6 +4,9 @@ raspi-firmware (1.20220331+ds-1) unstable; urgency=medium
     to "arch: all" (firmware is in the end just data!)
   * Updated copyright information for debian/*
   * Updated Lintian overrides
+  * Added the brcmfmac43456-sdio.{bin,clm_blob,txt} firmware files for
+    wlan0 support in the RPi p400; removed brcmfmac43455 as it is now
+    provided by firmware-brcm80211
 
  -- Gunnar Wolf <gwolf@debian.org>  Fri, 01 Apr 2022 11:48:35 -0600
 
