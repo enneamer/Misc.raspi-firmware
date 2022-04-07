@@ -1,24 +1,20 @@
 # The package distributes non-free binaries (for which the source is not
 # public) and contains bootloader code, so override a bunch of lintian warnings
-binary-from-other-architecture usr/lib/raspi-firmware/start.elf
-binary-from-other-architecture usr/lib/raspi-firmware/start4.elf
-binary-from-other-architecture usr/lib/raspi-firmware/start_cd.elf
-binary-from-other-architecture usr/lib/raspi-firmware/start4cd.elf
-binary-from-other-architecture usr/lib/raspi-firmware/start_db.elf
-binary-from-other-architecture usr/lib/raspi-firmware/start4db.elf
-binary-from-other-architecture usr/lib/raspi-firmware/start_x.elf
-binary-from-other-architecture usr/lib/raspi-firmware/start4x.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start4.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start_cd.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start4cd.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start_db.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start4db.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start_x.elf
+arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start4x.elf
 
-embedded-library usr/lib/raspi-firmware/start.elf: libpng
-embedded-library usr/lib/raspi-firmware/start4.elf: libpng
-embedded-library usr/lib/raspi-firmware/start_db.elf: libpng
-embedded-library usr/lib/raspi-firmware/start4db.elf: libpng
-embedded-library usr/lib/raspi-firmware/start4db.elf: libtheora
-embedded-library usr/lib/raspi-firmware/start_db.elf: libtheora
-embedded-library usr/lib/raspi-firmware/start_x.elf: libpng
-embedded-library usr/lib/raspi-firmware/start4x.elf: libpng
-embedded-library usr/lib/raspi-firmware/start_x.elf: libtheora
-embedded-library usr/lib/raspi-firmware/start4x.elf: libtheora
+embedded-library libpng usr/lib/raspi-firmware/start.elf
+embedded-library libpng usr/lib/raspi-firmware/start4.elf
+embedded-library libpng usr/lib/raspi-firmware/start4db.elf
+embedded-library libpng usr/lib/raspi-firmware/start4x.elf
+embedded-library libpng usr/lib/raspi-firmware/start_db.elf
+embedded-library libpng usr/lib/raspi-firmware/start_x.elf
 
 statically-linked-binary usr/lib/raspi-firmware/start.elf
 statically-linked-binary usr/lib/raspi-firmware/start4.elf
@@ -34,34 +30,20 @@ binary-has-unneeded-section usr/lib/raspi-firmware/start_cd.elf .comment
 binary-has-unneeded-section usr/lib/raspi-firmware/start_db.elf .comment
 binary-has-unneeded-section usr/lib/raspi-firmware/start_x.elf .comment
 
-spelling-error-in-binary usr/lib/raspi-firmware/start.elf reenable re-enable
-spelling-error-in-binary usr/lib/raspi-firmware/start.elf postion position
-spelling-error-in-binary usr/lib/raspi-firmware/start.elf intial initial
 spelling-error-in-binary usr/lib/raspi-firmware/start.elf Recyling Recycling
 spelling-error-in-binary usr/lib/raspi-firmware/start.elf rountine routine
 spelling-error-in-binary usr/lib/raspi-firmware/start.elf recieved received
-spelling-error-in-binary usr/lib/raspi-firmware/start.elf erorr error
 
 spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf postion position
-spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf reenable re-enable
 spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf trucate truncate
 spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf calulated calculated
-spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf intial initial
 spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf Recyling Recycling
 spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf rountine routine
 spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf recieved received
-spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf erorr error
-spelling-error-in-binary usr/lib/raspi-firmware/start_db.elf preceeding preceding
 
 spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf postion position
-spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf reenable re-enable
 spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf trucate truncate
 spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf calulated calculated
-spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf intial initial
 spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf Recyling Recycling
 spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf rountine routine
 spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf recieved received
-spelling-error-in-binary usr/lib/raspi-firmware/start_x.elf erorr error
-
-# Upstream does not provide a changelog
-no-upstream-changelog
