@@ -1,3 +1,12 @@
+raspi-firmware (1.20220331+ds-2) UNRELEASED; urgency=medium
+
+  * Factorize Pi 4 detection, used for GPU_FREQ and CMA settings. Also
+    discard confusing error messages when neither /sys/firmware/devicetree
+    nor /proc/device-tree exist, which is the case when building images
+    (e.g. with image-specs).
+
+ -- Cyril Brulebois <cyril@debamax.com>  Thu, 28 Apr 2022 19:48:58 +0200
+
 raspi-firmware (1.20220331+ds-1) unstable; urgency=medium
 
   * Change the binary package from declaring "arch: arm64 armhf armel"
