@@ -19,6 +19,15 @@ case "$1" in
     ;;
 esac
 
+
+pi_4_family() {
+  # This matches all RPi4 boards ("Raspberry Pi 4 Model B Rev 1.4"),
+  # Pi400 full computer systems ("Raspberry Pi 400 Rev 1.0"), and
+  # CM4 compute modules ("Raspberry Pi Compute Module 4 Rev 1.0").
+  grep -q 'Raspberry Pi \(Compute Module \)*4' /sys/firmware/devicetree/base/model 2>/dev/null
+}
+
+
 if ischroot ; then
   true # chroot detected - skip mount point check
 elif test -e /usr/bin/systemd-detect-virt && systemd-detect-virt -q ; then
@@ -114,10 +123,8 @@ arm_64bit=1
 EOF
 fi
 
-if grep -q 'Raspberry Pi 4' /sys/firmware/devicetree/base/model
+if pi_4_family
 then
-    # This matches all RPi4 boards ("Raspberry Pi 4 Model B Rev 1.4")
-    # and p400 full computer systems ("Raspberry Pi 400 Rev 1.0")
     if [ "$GPU_FREQ" != "auto" ]
     then
 	echo "core_freq=$GPU_FREQ" >> /boot/firmware/config.txt
@@ -178,7 +185,7 @@ fi
 # specifying CMA as with earlier models renders it unbootable. Omit
 # the setting for RPi4 if it is at the default 64M (if the
 # administrator has changed it, they should know what they are doing!)
-if [ "$CMA" = "64M" ] && grep -q 'Raspberry Pi 4' /proc/device-tree/model ; then
+if [ "$CMA" = "64M" ] && pi_4_family; then
     SET_CMA=''
 else
     SET_CMA="cma=$CMA"
