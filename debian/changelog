@@ -7,7 +7,7 @@ raspi-firmware (1.20220331+ds-2) UNRELEASED; urgency=medium
   * Add support for Compute Module 4 devices: they are in the Pi 4 family
     as well, just like the Pi 4 B and Pi 400 models, need the same tweaks
     for the CMA setting, and might require adjusting GPU_FREQ to ensure
-    the serial console is usable.
+    the serial console is usable (Closes: #996937).
 
  -- Cyril Brulebois <cyril@debamax.com>  Thu, 28 Apr 2022 19:48:58 +0200
 
