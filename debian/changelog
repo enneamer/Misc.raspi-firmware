@@ -10,6 +10,19 @@ raspi-firmware (1.20220830+ds-1) UNRELEASED; urgency=medium
 
  -- Gunnar Wolf <gwolf@debian.org>  Mon, 03 Oct 2022 09:11:55 -0500
 
+raspi-firmware (1.20220331+ds-2) unstable; urgency=medium
+
+  * Factorize Pi 4 detection, used for GPU_FREQ and CMA settings. Also
+    discard confusing error messages when neither /sys/firmware/devicetree
+    nor /proc/device-tree exist, which is the case when building images
+    (e.g. with image-specs).
+  * Add support for Compute Module 4 devices: they are in the Pi 4 family
+    as well, just like the Pi 4 B and Pi 400 models, need the same tweaks
+    for the CMA setting, and might require adjusting GPU_FREQ to ensure
+    the serial console is usable (Closes: #996937).
+
+ -- Cyril Brulebois <cyril@debamax.com>  Sun, 08 May 2022 19:14:25 +0200
+
 raspi-firmware (1.20220331+ds-1) unstable; urgency=medium
 
   * Change the binary package from declaring "arch: arm64 armhf armel"

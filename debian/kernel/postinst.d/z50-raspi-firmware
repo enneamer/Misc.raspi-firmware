@@ -19,11 +19,20 @@ case "$1" in
     ;;
 esac
 
+
+pi_4_family() {
+  # This matches all RPi4 boards ("Raspberry Pi 4 Model B Rev 1.4"),
+  # Pi400 full computer systems ("Raspberry Pi 400 Rev 1.0"), and
+  # CM4 compute modules ("Raspberry Pi Compute Module 4 Rev 1.0").
+  grep -q 'Raspberry Pi \(Compute Module \)*4' /sys/firmware/devicetree/base/model 2>/dev/null
+}
+
+
 if ischroot ; then
   true # chroot detected - skip mount point check
-elif test -e /usr/bin/systemd-detect-virt && systemd-detect-virt -q ; then
+elif [ -e /usr/bin/systemd-detect-virt ] && systemd-detect-virt -q ; then
   true # virtualization detected - skip mount point check
-elif ! mountpoint -q /boot/firmware; then
+elif ! mountpoint -q /boot/firmware ; then
   echo "raspi-firmware: missing /boot/firmware, did you forget to mount it?" >&2
   exit 1
 fi
@@ -33,14 +42,14 @@ mkdir -p /boot/firmware
 
 # shellcheck disable=SC2010
 latest_kernel=$(ls -1 /boot/vmlinuz-* | grep -E -v '\.(dpkg-bak|old-dkms)$' | sort -V -r | head -1)
-if [ -z "$latest_kernel" ]; then
+if [ -z "$latest_kernel" ] ; then
   echo "raspi-firmware: no kernel found in /boot/vmlinuz-*, cannot populate /boot/firmware"
   exit 0
 fi
 
 # shellcheck disable=SC2010
 latest_initrd=$(ls -1 /boot/initrd.img-* | grep -E -v '\.(dpkg-bak|old-dkms)$' | sort -V -r | head -1)
-if [ -z "$latest_initrd" ]; then
+if [ -z "$latest_initrd" ] ; then
   echo "raspi-firmware: no initrd found in /boot/initrd.img-*, cannot populate /boot/firmware"
   exit 0
 fi
@@ -52,35 +61,37 @@ fi
 # a usable /proc
 CMA=64M
 ROOTPART=$(findmnt -n --output=source /) || true
-if [ -z "$ROOTPART" ]; then ROOTPART=/dev/mmcblk0p2;fi
+if [ -z "$ROOTPART" ] ; then
+  ROOTPART=/dev/mmcblk0p2
+fi
 KERNEL="auto"
 INITRAMFS="auto"
 CONSOLES="auto"
 KERNEL_ARCH=''
-if [ -r /etc/default/raspi-firmware ]; then
-        . /etc/default/raspi-firmware
+if [ -r /etc/default/raspi-firmware ] ; then
+  . /etc/default/raspi-firmware
 fi
 
 # copy and rename the available device tree binaries
 # the bootloader will pick the right device tree binary
 # if it is named according to the system on chip family name
 if [ -n "$KERNEL_ARCH" ] ; then
-    arch=$KERNEL_ARCH
+  arch=$KERNEL_ARCH
 else
-    arch=$(dpkg --print-architecture)
+  arch=$(dpkg --print-architecture)
 fi
 
-if [ "$arch" = "arm64" ]; then
+if [ "$arch" = "arm64" ] ; then
   dtb_path="/usr/lib/linux-image-${latest_kernel#/boot/vmlinuz-}/broadcom"
 else
   # there is no vendor subdirectory for armhf
   dtb_path="/usr/lib/linux-image-${latest_kernel#/boot/vmlinuz-}"
 fi
 
-if [ "$KERNEL" = "auto" ]; then
+if [ "$KERNEL" = "auto" ] ; then
   for dtb in "${dtb_path}"/bcm*.dtb; do
-      [ -e "${dtb}" ] || continue
-      cp "${dtb}" /boot/firmware/
+    [ -e "${dtb}" ] || continue
+    cp "${dtb}" /boot/firmware/
   done
 
   latest_kernel_basename=$(basename "$latest_kernel")
@@ -106,7 +117,7 @@ cat >/boot/firmware/config.txt <<EOF
 
 EOF
 
-if [ "$arch" = "arm64" ]; then
+if [ "$arch" = "arm64" ] ; then
   cat >>/boot/firmware/config.txt <<EOF
 # Switch the CPU from ARMv7 into ARMv8 (aarch64) mode
 arm_64bit=1
@@ -114,14 +125,10 @@ arm_64bit=1
 EOF
 fi
 
-if grep -q 'Raspberry Pi 4' /sys/firmware/devicetree/base/model
-then
-    # This matches all RPi4 boards ("Raspberry Pi 4 Model B Rev 1.4")
-    # and p400 full computer systems ("Raspberry Pi 400 Rev 1.0")
-    if [ "$GPU_FREQ" != "auto" ]
-    then
-	echo "core_freq=$GPU_FREQ" >> /boot/firmware/config.txt
-    fi
+if pi_4_family ; then
+  if [ "$GPU_FREQ" != "auto" ] ; then
+    echo "core_freq=$GPU_FREQ" >> /boot/firmware/config.txt
+  fi
 fi
 
 cat >>/boot/firmware/config.txt <<EOF
@@ -131,7 +138,7 @@ upstream_kernel=1
 kernel=${KERNEL}
 EOF
 
-if [ "$INITRAMFS" != "no" ]; then
+if [ "$INITRAMFS" != "no" ] ; then
   cat >>/boot/firmware/config.txt <<EOF
 # For details on the initramfs directive, see
 # https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=10532
@@ -140,7 +147,7 @@ EOF
 fi
 
 firmware_custom="/etc/default/raspi-firmware-custom"
-if [ -f "$firmware_custom" ]; then
+if [ -f "$firmware_custom" ] ; then
   cat >>/boot/firmware/config.txt <<EOF
 
 # Inserted by ${firmware_custom}
@@ -154,38 +161,38 @@ fi
 # We leave the consoles configurable.
 
 pre_cmdline=""
-if [ "$CONSOLES" = "auto" ]; then
-    # If the user did not specify $CONSOLES, fill in with values
-    # existing in the system. tty0 is guaranteed to exist, no need to
-    # probe.
-    pre_cmdline="console=tty0"
-    if [ -e /dev/ttyAMA0 ]; then
-	# ttyAMA0 is used in armel, armhf (RPi families 0, 1, 2)
-	pre_cmdline="$pre_cmdline console=ttyAMA0,115200"
-    fi
-    if [ -e /dev/ttyS1 ]; then
-	# ttyS1 is used in arm64 (RPi families 3, 4)
-	pre_cmdline="$pre_cmdline console=ttyS1,115200"
-    fi
+if [ "$CONSOLES" = "auto" ] ; then
+  # If the user did not specify $CONSOLES, fill in with values
+  # existing in the system. tty0 is guaranteed to exist, no need to
+  # probe.
+  pre_cmdline="console=tty0"
+  if [ -e /dev/ttyAMA0 ] ; then
+    # ttyAMA0 is used in armel, armhf (RPi families 0, 1, 2)
+    pre_cmdline="$pre_cmdline console=ttyAMA0,115200"
+  fi
+  if [ -e /dev/ttyS1 ] ; then
+    # ttyS1 is used in arm64 (RPi families 3, 4)
+    pre_cmdline="$pre_cmdline console=ttyS1,115200"
+  fi
 else
-    # The user has specified one or more consoles
-    for console in $CONSOLES; do
-	pre_cmdline="${pre_cmdline} console=${console}"
-    done
+  # The user has specified one or more consoles
+  for console in $CONSOLES; do
+    pre_cmdline="${pre_cmdline} console=${console}"
+  done
 fi
 
 # GPU and memory architecture are different in RPi model 4, and
 # specifying CMA as with earlier models renders it unbootable. Omit
 # the setting for RPi4 if it is at the default 64M (if the
 # administrator has changed it, they should know what they are doing!)
-if [ "$CMA" = "64M" ] && grep -q 'Raspberry Pi 4' /proc/device-tree/model ; then
-    SET_CMA=''
+if [ "$CMA" = "64M" ] && pi_4_family ; then
+  SET_CMA=''
 else
-    SET_CMA="cma=$CMA"
+  SET_CMA="cma=$CMA"
 fi
 
 cmdline_custom="/etc/default/raspi-extra-cmdline"
-if [ -f "$cmdline_custom" ]; then
+if [ -f "$cmdline_custom" ] ; then
   post_cmdline=$(cat $cmdline_custom)
 fi
 
@@ -195,7 +202,7 @@ EOF
 
 cd /boot/firmware
 for file in vmlinuz-* initrd.img-*; do
-  if [ ! -e "/boot/$file" ]; then
+  if [ ! -e "/boot/$file" ] ; then
     echo "raspi-firmware: deleting obsolete /boot/firmware/$file (no longer in /boot)"
     # Keep going if cleanup of individual files fails. It is better for the end
     # user to have a working package upgrade and a slight waste of space than a
