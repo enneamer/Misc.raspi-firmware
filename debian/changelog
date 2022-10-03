@@ -1,4 +1,4 @@
-raspi-firmware (1.20220830+ds-1) UNRELEASED; urgency=medium
+raspi-firmware (1.20220830+ds-1) unstable; urgency=medium
 
   [ Gunnar Wolf ]
   * New upstream release
