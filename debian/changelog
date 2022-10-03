@@ -6,13 +6,17 @@ raspi-firmware (1.20220830+ds-1) UNRELEASED; urgency=medium
   * Drop the transitional package raspi3-firmware, as it is no longer
     needed after a full release cycle (Debian 11 Bookworm released with
     raspi-firmware already)
-  * Added firmware-brcm80211, firmware-misc-nonfree, bluez-firmware
-    packages as Suggests (see Salsa merge request !31)
-  * Only put core_freq into config.txt if GPU_FREQ is not empty (Salsa
-    MR !29)
 
   [ Diederik de Haas ]
   * Specify CMA value to disable CMA allocation (Salsa MR !28)
+
+  [ Andres Salomon ]
+  * Only put core_freq into config.txt if GPU_FREQ is not empty (Salsa
+    MR !29)
+
+  [ Jiri Kastner ]
+  * Added firmware-brcm80211, firmware-misc-nonfree, bluez-firmware
+    packages as Suggests (see Salsa merge request !31)
 
  -- Gunnar Wolf <gwolf@debian.org>  Mon, 03 Oct 2022 09:11:55 -0500
 
