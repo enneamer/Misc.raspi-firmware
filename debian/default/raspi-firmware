@@ -17,6 +17,9 @@
 # Note that setting the CMA is not necessary in RPi4 (specifying it
 # might render your system unbootable!)
 #
+# To disable CMA allocation entirely, f.e. for a headless setup, set 
+# CMA=0
+#
 #CMA=64M
 
 # Filesystem to mount on root. If not specified, find what partition
