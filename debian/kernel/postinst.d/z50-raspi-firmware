@@ -44,19 +44,48 @@ if [ -z "$latest_initrd" ]; then
 fi
 
 # Default configurations, overridable at /etc/default/raspi-firmware
-#
-# Added an '|| true' to findmnt to avoid its failure breaking the install
-# running under a container or virtual environment that does not provide
-# a usable /proc
 CMA=64M
-ROOTPART=$(findmnt -n --output=source /) || true
-if [ -z "$ROOTPART" ]; then ROOTPART=/dev/mmcblk0p2;fi
 KERNEL="auto"
 INITRAMFS="auto"
 CONSOLES="auto"
 KERNEL_ARCH=''
+
+# Load user configuration
 if [ -r /etc/default/raspi-firmware ]; then
         . /etc/default/raspi-firmware
+fi
+
+# Determine root mountpoint parameters if unset by user
+if [ -z "$ROOTPART" ] ; then
+    root_info () {
+	findmnt --noheading --first-only --nofsroot --output="$1" /
+    }
+
+    # Added fallback to avoid breaking the install when running under
+    # a container or virtual environment that does not provide a
+    # usable /proc
+    ROOTPART="$(root_info source)" || ROOTPART=/dev/mmcblk0p2
+
+    # Support for root filesystem on Btrfs or ZFS
+    fstype="$(root_info fstype)" || true
+    case "$fstype" in
+	btrfs)
+	    subvolume="$(root_info fsroot)" &&
+		uuid="$(root_info uuid)" &&
+		ROOTPART="UUID=$uuid rootflags=subvol=$subvolume" ||
+		    echo "raspi-firmware: warning: couldn't find specifics of root Btrfs mount." >&2
+	;;
+	zfs)
+	    ROOTPART="ZFS=$ROOTPART boot=zfs"
+	;;
+    esac
+fi
+
+# Still empty? Do a last guess of default location. This will likely
+# not work, but not including a ROOTPART at all will surely result in
+# a broken system :-\
+if [ -z "$ROOTPART" ] ; then
+  ROOTPART=/dev/mmcblk0p2
 fi
 
 # copy and rename the available device tree binaries
