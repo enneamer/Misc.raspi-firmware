@@ -126,7 +126,7 @@ EOF
 fi
 
 if pi_4_family ; then
-  if [ "$GPU_FREQ" != "auto" ] ; then
+  if [ -n "$GPU_FREQ" ] && [ "$GPU_FREQ" != "auto" ] ; then
     echo "core_freq=$GPU_FREQ" >> /boot/firmware/config.txt
   fi
 fi
