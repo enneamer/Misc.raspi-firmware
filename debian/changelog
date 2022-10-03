@@ -1,3 +1,13 @@
+raspi-firmware (1.20220830+ds-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+  * Move from non-free to the new non-free-firmware section
+  * Drop the transitional package raspi3-firmware, as it is no longer
+    needed after a full release cycle (Debian 11 Bookworm released with
+    raspi-firmware already)
+
+ -- Gunnar Wolf <gwolf@debian.org>  Mon, 03 Oct 2022 09:11:55 -0500
+
 raspi-firmware (1.20220331+ds-1) unstable; urgency=medium
 
   * Change the binary package from declaring "arch: arm64 armhf armel"

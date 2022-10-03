@@ -1,6 +1,6 @@
 Source: raspi-firmware
 Rules-Requires-Root: no
-Section: non-free/misc
+Section: non-free-firmware/misc
 Priority: optional
 Maintainer: pkg-raspi <pkg-raspi-maintainers@lists.alioth.debian.org>
 Uploaders: Michael Stapelberg <stapelberg@debian.org>,
@@ -12,13 +12,6 @@ Homepage: https://github.com/raspberrypi/firmware
 Vcs-Git: https://salsa.debian.org/debian/raspi-firmware.git
 Vcs-Browser: https://salsa.debian.org/debian/raspi-firmware
 XS-Autobuild: yes
-
-Package: raspi3-firmware
-Depends: raspi-firmware, ${misc:Depends}
-Architecture: all
-Section: non-free/oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
 
 Package: raspi-firmware
 Architecture: all
