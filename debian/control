@@ -1,6 +1,6 @@
 Source: raspi-firmware
 Rules-Requires-Root: no
-Section: non-free/misc
+Section: non-free-firmware/misc
 Priority: optional
 Maintainer: pkg-raspi <pkg-raspi-maintainers@lists.alioth.debian.org>
 Uploaders: Michael Stapelberg <stapelberg@debian.org>,
@@ -13,19 +13,13 @@ Vcs-Git: https://salsa.debian.org/debian/raspi-firmware.git
 Vcs-Browser: https://salsa.debian.org/debian/raspi-firmware
 XS-Autobuild: yes
 
-Package: raspi3-firmware
-Depends: raspi-firmware, ${misc:Depends}
-Architecture: all
-Section: non-free/oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
 Package: raspi-firmware
 Architecture: all
 Pre-Depends: dpkg (>= 1.17.14)
 Depends: ${shlibs:Depends}, ${misc:Depends}, dosfstools
 Breaks: linux-firmware-raspi3 (<< 1.20161123-2), raspi3-firmware (<< 1.20190718-1~)
 Replaces: linux-firmware-raspi3 (<< 1.20161123-2), raspi3-firmware (<< 1.20190718-1~)
+Suggests: firmware-brcm80211, firmware-misc-nonfree, bluez-firmware
 Description: Raspberry Pi family GPU firmware and bootloaders
  This package contains all the proprietary files necessary to boot a
  Raspberry Pi board. This should work with all models in the 0, 1, 2, 3 and
