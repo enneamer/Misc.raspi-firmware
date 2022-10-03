@@ -11,4 +11,8 @@ raspi-firmware source: source-contains-prebuilt-binary boot/start.elf
 raspi-firmware source: source-contains-prebuilt-binary boot/start_cd.elf
 raspi-firmware source: source-contains-prebuilt-binary boot/start_db.elf
 raspi-firmware source: source-contains-prebuilt-binary boot/start_x.elf
+raspi-firmware source: source-contains-prebuilt-binary boot/start4.elf
+raspi-firmware source: source-contains-prebuilt-binary boot/start4cd.elf
+raspi-firmware source: source-contains-prebuilt-binary boot/start4db.elf
+raspi-firmware source: source-contains-prebuilt-binary boot/start4x.elf
 raspi-firmware source: debian-watch-does-not-check-gpg-signature
