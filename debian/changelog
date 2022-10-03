@@ -16,11 +16,11 @@ raspi-firmware (1.20220830+ds-1) UNRELEASED; urgency=medium
 
   [ Jiri Kastner ]
   * Added firmware-brcm80211, firmware-misc-nonfree, bluez-firmware
-    packages as Suggests (Salsa MR !31)
+    packages as Suggests (Salsa MR !31) (Closes: #1014865)
 
   [ João Ricardo Matos ]
   * Add Btrfs and ZFS rootfs support to cmdline.txt generation (Salsa MR
-    !23)
+    !23) (Closes: #984691)
 
  -- Gunnar Wolf <gwolf@debian.org>  Mon, 03 Oct 2022 09:11:55 -0500
 
