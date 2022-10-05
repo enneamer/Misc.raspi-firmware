@@ -9,12 +9,12 @@ raspi-firmware: arch-independent-package-contains-binary-or-object usr/lib/raspi
 raspi-firmware: arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start_x.elf
 raspi-firmware: arch-independent-package-contains-binary-or-object usr/lib/raspi-firmware/start4x.elf
 
-raspi-firmware: embedded-library libpng usr/lib/raspi-firmware/start.elf
-raspi-firmware: embedded-library libpng usr/lib/raspi-firmware/start4.elf
-raspi-firmware: embedded-library libpng usr/lib/raspi-firmware/start4db.elf
-raspi-firmware: embedded-library libpng usr/lib/raspi-firmware/start4x.elf
-raspi-firmware: embedded-library libpng usr/lib/raspi-firmware/start_db.elf
-raspi-firmware: embedded-library libpng usr/lib/raspi-firmware/start_x.elf
+raspi-firmware: embedded-library usr/lib/raspi-firmware/start.elf: libpng
+raspi-firmware: embedded-library usr/lib/raspi-firmware/start4.elf: libpng
+raspi-firmware: embedded-library usr/lib/raspi-firmware/start4db.elf: libpng
+raspi-firmware: embedded-library usr/lib/raspi-firmware/start4x.elf: libpng
+raspi-firmware: embedded-library usr/lib/raspi-firmware/start_db.elf: libpng
+raspi-firmware: embedded-library usr/lib/raspi-firmware/start_x.elf: libpng
 
 raspi-firmware: statically-linked-binary usr/lib/raspi-firmware/start.elf
 raspi-firmware: statically-linked-binary usr/lib/raspi-firmware/start4.elf
