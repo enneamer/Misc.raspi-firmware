@@ -1,5 +1,5 @@
 Origin: https://github.com/RPi-Distro/firmware-nonfree/tree/master/brcm
-Forwarded: not-needd
+Forwarded: not-needed
 Last-Update: 2022-04-07
 Reviewed-by: Gunnar Wolf <gwolf@debian.org>
 Description: Add a Raspberry-specific firmware file not included upstream
