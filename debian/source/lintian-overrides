@@ -1,18 +1,9 @@
 # This is non-free firmware, sourceless files are allowed
-raspi-firmware source: source-is-missing boot/start.elf
-raspi-firmware source: source-is-missing boot/start4.elf
-raspi-firmware source: source-is-missing boot/start4cd.elf
-raspi-firmware source: source-is-missing boot/start4db.elf
-raspi-firmware source: source-is-missing boot/start4x.elf
-raspi-firmware source: source-is-missing boot/start_cd.elf
-raspi-firmware source: source-is-missing boot/start_db.elf
-raspi-firmware source: source-is-missing boot/start_x.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start_cd.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start_db.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start_x.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start4.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start4cd.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start4db.elf
-raspi-firmware source: source-contains-prebuilt-binary boot/start4x.elf
-raspi-firmware source: debian-watch-does-not-check-gpg-signature
+source-is-missing [boot/start.elf]
+source-is-missing [boot/start4.elf]
+source-is-missing [boot/start4cd.elf]
+source-is-missing [boot/start4db.elf]
+source-is-missing [boot/start4x.elf]
+source-is-missing [boot/start_cd.elf]
+source-is-missing [boot/start_db.elf]
+source-is-missing [boot/start_x.elf]
