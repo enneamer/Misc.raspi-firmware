@@ -2,6 +2,7 @@ raspi-firmware (1.20230405+ds-1) UNRELEASED; urgency=medium
 
   * New upstream version
   * Fixed typo in brcm_firmware patch (not-needd → not-needed)
+  * Don't copy files to /boot/firmware on remove (Closes: #1032186)
 
  -- Gunnar Wolf <gwolf@debian.org>  Wed, 05 Jul 2023 13:17:20 -0600
 
