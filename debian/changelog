@@ -1,3 +1,10 @@
+raspi-firmware (1.20230405+ds-2) unstable; urgency=medium
+
+  * Skip running postinst if installing on a system that's not arch:arm*
+    (Closes: #1040896, #1040485, #1042070, #1040669)
+
+ -- Gunnar Wolf <gwolf@debian.org>  Wed, 26 Jul 2023 12:39:57 -0600
+
 raspi-firmware (1.20230405+ds-1) unstable; urgency=medium
 
   * New upstream version

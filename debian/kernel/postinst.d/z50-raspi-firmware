@@ -27,11 +27,25 @@ pi_4_family() {
   grep -q 'Raspberry Pi \(Compute Module \)*4' /sys/firmware/devicetree/base/model 2>/dev/null
 }
 
+is_arm_system() {
+  # Check to see if the host is running an arm-based system
+  # (i.e. whether the raspi-firmware package is useful)
+  DPKG_ARCH=$(dpkg --print-architecture)
+  case "$DPKG_ARCH" in
+    arm64|armel|armhf)
+      return 0;;
+    *)
+      return 1;;
+  esac
+}
 
 if ischroot ; then
   true # chroot detected - skip mount point check
 elif [ -e /usr/bin/systemd-detect-virt ] && systemd-detect-virt -q ; then
   true # virtualization detected - skip mount point check
+elif ! is_arm_system ; then
+  # Not running on an arm-based system, skip postinst.
+  exit 0
 elif ! mountpoint -q /boot/firmware ; then
   echo "raspi-firmware: missing /boot/firmware, did you forget to mount it?" >&2
   exit 1
