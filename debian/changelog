@@ -1,4 +1,4 @@
-raspi-firmware (20220830+ds-1+deb12u1) bookworm; urgency=medium
+raspi-firmware (1.20220830+ds-1+deb12u1) bookworm; urgency=medium
 
   * Skip running postinst if installing on a system that's not arch:arm*
     (Closes: #1040896, #1040485, #1042070, #1040669, #1049448)
