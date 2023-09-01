@@ -1,3 +1,9 @@
+raspi-firmware (1.20220830+ds-1+deb12u1+enneamer1) stable; urgency=medium
+
+  * feat: add initial GitLab CI build
+
+ -- Enneamer <enneamer@enneamer.is>  Fri, 01 Sep 2023 21:16:04 +0800
+
 raspi-firmware (1.20220830+ds-1+deb12u1) bookworm; urgency=medium
 
   * Skip running postinst if installing on a system that's not arch:arm*

@@ -1,0 +1,40 @@
+stages:
+  - build
+  - publish
+
+include:
+  - project: 'arcana/0044.202200'
+    ref: main
+    file: '/src/gitlab-ci/debian.yml'
+
+build_arm64:
+  extends:
+    - .debian_build
+  variables:
+    DEBIAN_ARCHITECTURE: arm64
+  tags:
+    - arcana
+    - arm64
+    - generic
+  timeout: 4h
+  artifacts:
+    paths:
+      - artifacts/arm64/
+
+publish_internal:
+  extends:
+    - .debian_publish_internal
+  tags:
+    - arcana
+    - arm64
+    - generic
+
+#publish_public:
+#  extends:
+#    - .debian_publish_public
+#  variables:
+#    DEBIAN_PUBLIC_PROJECT_ID: xxxxxxx
+#  tags:
+#    - arcana
+#    - arm64
+#    - generic

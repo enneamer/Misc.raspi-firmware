@@ -48,7 +48,6 @@ elif ! is_arm_system ; then
   exit 0
 elif ! mountpoint -q /boot/firmware ; then
   echo "raspi-firmware: missing /boot/firmware, did you forget to mount it?" >&2
-  exit 1
 fi
 
 # Ensure the target directory exists. See https://bugs.debian.org/887062
