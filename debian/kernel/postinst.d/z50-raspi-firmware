@@ -239,7 +239,7 @@ if [ -f "$cmdline_custom" ] ; then
 fi
 
 cat >/boot/firmware/cmdline.txt <<EOF
-${pre_cmdline} root=$ROOTPART rw fsck.repair=yes net.ifnames=0 $SET_CMA rootwait ${post_cmdline}
+${pre_cmdline} root=$ROOTPART rw fsck.repair=yes $SET_CMA rootwait ${post_cmdline}
 EOF
 
 cd /boot/firmware
