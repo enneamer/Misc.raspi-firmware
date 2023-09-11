@@ -100,7 +100,7 @@ if [ -z "$ROOTPART" ] ; then
 		    echo "raspi-firmware: warning: couldn't find specifics of root Btrfs mount." >&2
 	;;
 	zfs)
-	    ROOTPART="ZFS=$ROOTPART boot=zfs"
+	    ROOTPART="zfs:$ROOTPART"
 	;;
     esac
 fi

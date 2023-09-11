@@ -1,3 +1,9 @@
+raspi-firmware (1.20220830+ds-1+deb12u1+enneamer3) stable; urgency=medium
+
+  * fix: use proper ZFS cmdline for dracut
+
+ -- Enneamer <enneamer@enneamer.is>  Mon, 11 Sep 2023 13:33:01 +0800
+
 raspi-firmware (1.20220830+ds-1+deb12u1+enneamer2) stable; urgency=medium
 
   * feat: use predictable network interface
