@@ -1,3 +1,9 @@
+raspi-firmware (1.20220830+ds-1+deb12u1+enneamer5) stable; urgency=medium
+
+  * fix: remove /boot/firmware check from postinst hook
+
+ -- Enneamer <enneamer@enneamer.is>  Wed, 13 Sep 2023 00:09:06 +0800
+
 raspi-firmware (1.20220830+ds-1+deb12u1+enneamer4) stable; urgency=medium
 
   * fix: correct postinst hook script
